@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+       
+        h3
+        {
+
+            color:red;
+        }
+        h2
+        {
+            color: lawngreen;
+        }
+        h1
+        {
+            text-align: center;
+            background-color:aqua;
+            color: red;
+            
+
+        }
+        table
+        {
+            border: 3px double red;
+            text-align: center;
+            width: 100%;
+            
+            
+        }
+        tr,td,tbody
+        {
+            border: 3px dotted blue;
+            padding: 5px;
+            color: fuchsia;
+            
+            
+
+        }
+        th
+        {
+            border: 3px double yellowgreen;
+            padding: 10px;
+            color: navy;  
+            font-style: italic; 
+            font-size: x-large;
+        }
+       
+    </STYle>
+</head>
+<body>
+    <fieldset>
+       <table border="3PX">
+       <tr>
+        <th colspan="2"><h3>DNAME</h3></th>
+        <TH colspan="2"><h3>DEPTNO</h3></TH>
+        <TH colspan="3"><h3>LOC</h3></TH>
+       </tr>
+        {% for do in LDEO %}
+        <tr>
+            <td colspan="2">
+           <h2>{{do.dname}}</h2>
+        </td>
+        <td colspan="2">
+           <h2>{{do.deptno}}</h2>
+        </td>
+        <td colspan="3">
+           <h2>{{do.loc}}</h2>
+        </td>
+        </tr>
+        <tr><th>ENAME</th>
+        <TH>EMPNO</TH>
+        <TH>JOB</TH>
+        <TH>MGR</TH>
+        <TH>SAL</TH>
+        <TH>COMM</TH>
+    <TH>HIREDATE</TH></tr>
+        {% for eo in do.emp_set.all %}
+            <tr>
+        <td>{{eo.ename}}</td>
+        <td>{{eo.empno}}</td>
+        <td>{{eo.job }}</td>
+        <td>{{eo.mgr}}</td>
+        <td>{{eo.sal}}</td>
+        <td>{{eo.comm}}</td>
+        <td>{{eo.hiredate}}</td>
+    </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    </fieldset>
+</body>
+</html>

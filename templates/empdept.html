@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPDEPT</title>
+    <style>
+        fieldset
+        {
+            
+            color: blue;
+        }
+        h1
+        {
+            background-color: aqua;
+            color: red;
+            text-align: center;
+        }
+        table
+        {
+            border:5px double aqua;
+            padding: 5px;
+            width: 100%;
+       
+
+        }
+        tr,td{
+            border: 3px dotted blue;
+            padding: 4px;
+            text-align: center;
+            color: blue;
+            font-size: x-large;
+            
+
+        }
+        th{
+            color:navy;
+            border: 5px dotted greenyellow;
+            padding: 10px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>empdept details </h1>
+        <table>
+            <tr>
+                <th>Empno</th>
+                <th>Ename</th>
+                <th>Job</th>
+                <th>Hire date</th>
+                <th>Sal</th>
+                <th>comm</th>
+                <th>MGR</th>
+                <th>deptno</th>
+                <th>Dname</th>
+                <th>Loc</th>
+            </tr>
+            {%  for edos in EDO %}
+               
+                    <tr>
+                        <td>{{edos.empno}}</td>
+                        <td>{{edos.ename}}</td>
+                        <td>{{edos.job}}</td>
+                        <td>{{edos.hiredate}}</td>
+                        <td>{{edos.sal}}</td>
+                        <td>{{edos.comm}}</td>
+                        <td>{{edos.mgr}}</td>
+                        <td>{{edos.deptno}}</td>
+                        <td>{{edos.deptno.dname}}</td>
+                        <td>{{edos.deptno.loc}}</td>
+                    </tr>
+             
+            
+            {% endfor %}
+                </table>
+            
+    </fieldset>
+</body>
+</html>
