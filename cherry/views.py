@@ -207,8 +207,9 @@ def update_data(request):
     
 def deletion_data(request):
     #Emp.objects.filter( deptno=40).delete()
-    Emp.objects.filter(ename='PARVEZ').delete()
-    Emp.objects.all().delete()
+    Dept.objects.filter(deptno=50).delete()
+    #Emp.objects.filter(ename='PARVEZ').delete()
+    #Emp.objects.all().delete()
     emps=Emp.objects.all()
     d={'emps':emps}
     return render(request,'test1.html',d)
